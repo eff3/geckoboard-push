@@ -52,9 +52,14 @@ module Geckoboard
       self.push(:item => data)
     end
 
-    # Red, amber and green should be values
-    def rag(red, amber, green)
-      self.push(:item => [{:value => red}, {:value => amber}, {:value => green}])
+    # items should be an array of hashes
+    # [
+    #   { "value:" 132, "text": "Red description"}, 
+    #   { "value:" 13, "text": "Amber description"},
+    #   { "value:" 3, "text": "Green description"} 
+    # ]
+    def rag(items)
+      self.push(:item => items)
     end
 
     # Values should be an array of numeric values
