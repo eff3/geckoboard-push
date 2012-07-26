@@ -98,5 +98,15 @@ module Geckoboard
       opts[:percentage] = "hide" if hide_percentage
       self.push(opts)
     end
+    
+    # An array of hashes, examples of the hashes are:
+    # * { :latitude => 44, :longitude => -78 }
+    # * { :host "geckoboard.com" }
+    # * { :ip => "127.0.0.1" }
+    # * { :city => { :city_name=>"", :region_code=>"", :country_code=>"" } }
+    # Points=> point 
+    def map( points )
+      self.push( :points => { :point => points }) 
+    end
   end
 end
